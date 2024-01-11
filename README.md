@@ -2,13 +2,11 @@
 Promact Infotech Assignment 2 CSS
 
 ###  Link: [Live Page](https://jayminvalaki.me/Promact_CSS_Assigement2/)
-## SCSS to CSS Compilation Guide
-
 ## screenshot
 
 <img src="./Screenshot/CSS_Assigement2.png">
 
-## step for scss
+## SCSS to CSS Compilation Guide
 ### Step 1: Install Node.js and npm
 Ensure that Node.js and npm are installed on your computer. If not, download and install them from Node.js.
 
