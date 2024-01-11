@@ -1,0 +1,96 @@
+// Variables
+$primary-color: #80007E;
+$secondary-color: #d8da3d;
+$font-stack: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+$navbar-width: 9em;
+$navbar-item-width: 170px;
+$section-margin: 20px 0 0 70px;
+$section-paragraph-margin: 20px 0;
+
+// Mixins
+@mixin bordered($color) {
+    border: 1px dotted $color;
+    text-align: left;
+    margin-right: 20%;
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+}
+
+// Styles
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding-left: 11em;
+    font-family: $font-stack;
+    color: $primary-color;
+    background-color: $secondary-color;
+}
+
+ul.navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: $navbar-width;
+
+    li {
+        background: white;
+        padding: 0.3em;
+        margin: 0.5em 0; 
+        width: $navbar-item-width;
+
+        &:nth-child(2), &:nth-child(4) {
+            border-right: 16px solid #0000FF; 
+        }
+
+        &:not(:nth-child(2)):not(:nth-child(4)) {
+            border-right: 16px solid #FF7F00; 
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.section {
+    margin: $section-margin;
+
+    p {
+        margin: $section-paragraph-margin;
+    }
+
+    p.first {
+        @include bordered(black);
+    }
+
+    p.second {
+        @include bordered(red);
+        text-align: right;
+    }
+
+    p.third {
+        @include bordered(green);
+        text-align: center;
+
+        &:hover {
+            animation: bounce 1s;
+        }
+    }
+}
+
+@keyframes bounce {
+    0% { transform: scale(1,1) translateY(0); }
+    10% { transform: scale(1.1,.9) translateY(0); }
+    30% { transform: scale(.9,1.1) translateY(-100px); }
+    50% { transform: scale(1.05,.95) translateY(0); }
+    57% { transform: scale(1,1) translateY(-7px); }
+    64% { transform: scale(1,1) translateY(0); }
+    100% { transform: scale(1,1) translateY(0); }
+}
